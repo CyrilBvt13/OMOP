@@ -69,11 +69,17 @@ Puis pour vérifier que tout est ok :
 
 --- Executer les scripts d'installation OMOP
 
-pour lancher le script d'installation : python omop.py install
+pour lancher le script d'installation : 
 
-pour lancer le script de vérification : python omop.py validate_omop
+    python omop.py install
 
-pour chercher une correspondance : python omop.py search E11.9
+pour lancer le script de vérification : 
+
+    python omop.py validate_omop
+
+pour chercher une correspondance : 
+
+    python omop.py search E11.9
 
 
 
@@ -94,9 +100,13 @@ condition_occurrence ← conditions.csv
 drug_exposure ← medications.csv
 measurement ← observations.csv
 
-commande pour initier l'etl : python omop.py init-etl
+commande pour initier l'etl : 
 
-commande pour valider l'etl : python omop.py validate_synthea
+    python omop.py init-etl
+
+commande pour valider l'etl : 
+
+    python omop.py validate_synthea
 
 Notes : pour les drug si STOP est vide, on prend START comme date de fin.
 
