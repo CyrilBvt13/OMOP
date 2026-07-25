@@ -44,24 +44,26 @@ prérequis :
 
 Une fois le docker-compose.yml créé 
 
-docker compose up -d
+    docker compose up -d
 
-docker ps
+    docker ps
 
 doit retourner : 
 
-CONTAINER ID   IMAGE          PORTS
-xxxx           postgres:15    0.0.0.0:5432->5432
+    CONTAINER ID   IMAGE          PORTS
+    xxxx           postgres:15    0.0.0.0:5432->5432
 
-docker exec -it database-postgres-1 bash
+Puis pour vérifier que tout est ok :
 
-psql -U omop -d omop
+    docker exec -it database-postgres-1 bash
 
-SELECT version();
+    psql -U omop -d omop
 
-quitter : \q
+    SELECT version();
 
-puis : exit
+    quitter : \q
+
+    puis : exit
 
 
 
@@ -77,7 +79,7 @@ pour chercher une correspondance : python omop.py search E11.9
 
 ---- Création des patients 
 
-./run_synthea -p 100 --exporter.csv.export=true
+    ./run_synthea -p 100 --exporter.csv.export=true
 
 les patients sont créés dans /output/csv
 
@@ -101,4 +103,4 @@ Notes : pour les drug si STOP est vide, on prend START comme date de fin.
 
 ---- Vider les tables automatiquement
 
-python omop.py reset
+    python omop.py reset
