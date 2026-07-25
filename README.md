@@ -10,7 +10,7 @@ Objectif :
                    │
       ┌──────────────────────────┐
       ▼                          ▼
-     Exploration (EDA)          SQL
+        Exploration (EDA)        SQL
                                  │
                                  ▼
                          Analyse clinique
@@ -19,7 +19,7 @@ Objectif :
 
 
 prérequis :
-- Synthea (Java 17 requis):
+- Synthea (Java 17 requis) --> A déposer dans installer/synthea
 
         git clone https://github.com/synthetichealth/synthea.git
 
@@ -33,9 +33,9 @@ prérequis :
 
         pip install tqdm
 
-- les vocabulaires Atlas : https://athena.ohdsi.org/vocabulary/list
+- les vocabulaires Athena : https://athena.ohdsi.org/vocabulary/list --> A déposer dans installer/vocabulary
 
-- le CDM : https://github.com/OHDSI/CommonDataModel
+- le CDM : https://github.com/OHDSI/CommonDataModel --> A déposer dans installer/CommonDataModel
 
 
 
@@ -44,40 +44,48 @@ prérequis :
 
 Une fois le docker-compose.yml créé 
 
-docker compose up -d
+        docker compose up -d
 
-docker ps
+        docker ps
 
 doit retourner : 
 
-CONTAINER ID   IMAGE          PORTS
-xxxx           postgres:15    0.0.0.0:5432->5432
+        CONTAINER ID   IMAGE          PORTS
+        xxxx           postgres:15    0.0.0.0:5432->5432
 
-docker exec -it database-postgres-1 bash
+Pour vérifier : 
 
-psql -U omop -d omop
+        docker exec -it database-postgres-1 bash
 
-SELECT version();
+        psql -U omop -d omop
 
-quitter : \q
+        SELECT version();
 
-puis : exit
+        quitter : \q
+
+        puis : exit
 
 
 
 --- Executer les scripts d'installation OMOP
 
-pour lancher le script d'installation : python omop.py install
+pour lancher le script d'installation : *
 
-pour lancer le script de vérification : python omop.py validate_omop
+        python omop.py install
 
-pour chercher une correspondance : python omop.py search E11.9
+pour lancer le script de vérification : 
+
+        python omop.py validate_omop
+
+pour chercher une correspondance : 
+
+        python omop.py search E11.9
 
 
 
 ---- Création des patients 
 
-./run_synthea -p 100 --exporter.csv.export=true
+        ./run_synthea -p 100 --exporter.csv.export=true
 
 les patients sont créés dans /output/csv
 
@@ -93,17 +101,21 @@ condition_occurrence ← conditions.csv
 drug_exposure ← medications.csv
 measurement ← observations.csv
 
-commande pour initier l'etl : python omop.py init-etl
+commande pour initier l'etl : 
 
-commande pour valider l'etl : python omop.py validate_synthea
+        python omop.py init-etl
 
-        Notes : pour les drug si STOP est vide, on prend START comme date de fin.
-        Notes : pour 100 patients il y a 75000 observations générées --> le script modules/reduce_observations.py permet de réduire ce volume à quelques observations par patients.
+commande pour valider l'etl : 
+
+        python omop.py validate_synthea
+
+Notes : pour les drug si STOP est vide, on prend START comme date de fin.
+Notes : pour 100 patients il y a 75000 observations générées --> le script modules/reduce_observations.py permet de réduire ce volume à quelques observations par patients.
 
 
 ---- Vider les tables automatiquement
 
-python omop.py reset
+        python omop.py reset
 
 
 ---- Exploration
