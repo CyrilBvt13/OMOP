@@ -19,7 +19,7 @@ Objectif :
 
 
 prérequis :
-- Synthea (Java 17 requis):
+- Synthea (Java 17 requis) --> A placer dans installer/synthea
 
         git clone https://github.com/synthetichealth/synthea.git
 
@@ -33,9 +33,9 @@ prérequis :
 
         pip install tqdm
 
-- les vocabulaires Athena : https://athena.ohdsi.org/vocabulary/list
+- les vocabulaires Athena : https://athena.ohdsi.org/vocabulary/list --> A placer dans installer/vocabulary
 
-- le CDM : https://github.com/OHDSI/CommonDataModel
+- le CDM : https://github.com/OHDSI/CommonDataModel --> A placer dans installer/CommonDataModel
 
 
 
