@@ -29,6 +29,7 @@ from modules.etl.visit import load_visit
 from modules.etl.condition import load_condition
 from modules.etl.drug import load_drug
 from modules.etl.measurement import load_measurement
+from modules.reduce_observations import reduce_observations
 
 from modules.reset import reset
 
@@ -93,12 +94,15 @@ elif args.command == "init-etl":
 
     load_drug()
 
-    #load_measurement()
+    reduce_observations()
+
+    load_measurement()
 
 
 # Commande pour charger les séjours uniquements
 elif args.command == "load_measurement":
 
+    reduce_observations()
     load_measurement()
 
 
