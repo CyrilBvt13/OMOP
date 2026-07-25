@@ -10,7 +10,7 @@ Objectif :
                    │
       ┌──────────────────────────┐
       ▼                          ▼
-        Exploration (EDA)        SQL
+    Exploration (EDA)           SQL
                                  │
                                  ▼
                          Analyse clinique
