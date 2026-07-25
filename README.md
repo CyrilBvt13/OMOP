@@ -3,7 +3,7 @@ Objectif :
                 Synthea
                    │
                    ▼
-          (ETL officiel OHDSI)
+                  ETL
                    │
                    ▼
           PostgreSQL OMOP
@@ -85,7 +85,7 @@ les patients sont créés dans /output/csv
 
 ---- ETL Synthea -> OMOP
 
-L'idée est de charger les fichiers générés par Synthea dans les tables OMOP :
+L'idée est de charger les fichiers générés par Synthea dans les tables OMOP simplifiées (on ne charge les 49 tables pour ce projet mais seulement les 5 plus importantes) :
 person ← patients.csv
 visit_occurrence ← encounters.csv
 condition_occurrence ← conditions.csv
