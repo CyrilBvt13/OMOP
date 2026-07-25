@@ -8,12 +8,12 @@ Objectif :
                    ▼
           PostgreSQL OMOP
                    │
-      ┌────────────┼─────────────┐
-      ▼            ▼             ▼
- Exploration      SQL          Python
-                   │
-                   ▼
-           Analyse clinique
+      ┌──────────────────────────┐
+      ▼                          ▼
+    Exploration (EDA)           SQL          
+                                 │
+                                 ▼
+                         Analyse clinique
 
 
 
