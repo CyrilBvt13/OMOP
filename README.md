@@ -33,7 +33,7 @@ prérequis :
 
         pip install tqdm
 
-- les vocabulaires Atlas : https://athena.ohdsi.org/vocabulary/list
+- les vocabulaires Athena : https://athena.ohdsi.org/vocabulary/list
 
 - le CDM : https://github.com/OHDSI/CommonDataModel
 
