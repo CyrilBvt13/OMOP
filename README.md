@@ -10,7 +10,7 @@ Objectif :
                    │
       ┌──────────────────────────┐
       ▼                          ▼
-    Exploration (EDA)           SQL
+        Exploration (EDA)        SQL
                                  │
                                  ▼
                          Analyse clinique
@@ -31,7 +31,7 @@ prérequis :
 
 - python
 
-        pip install tqdm
+        pip install tqdm jupyter pandas sqlalchemy psycopg2-binary matplotlib
 
 - les vocabulaires Athena : https://athena.ohdsi.org/vocabulary/list --> A déposer dans installer/vocabulary
 
@@ -64,6 +64,10 @@ Pour vérifier :
         quitter : \q
 
         puis : exit
+
+Pour se connecter directement à la base psql : 
+
+        docker exec -it database-postgres-1 psql -U omop -d omop
 
 
 

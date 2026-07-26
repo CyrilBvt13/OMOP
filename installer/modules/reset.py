@@ -109,3 +109,18 @@ def reset():
 
     print("")
     print("Reset terminé.")
+
+
+def reset_condition():
+
+    execute("""
+
+    DELETE FROM omop_etl.id_map
+    WHERE entity='condition';
+
+    TRUNCATE TABLE omop.condition_occurrence
+    RESTART IDENTITY CASCADE;
+
+    """)
+
+    print("Condition_occurrence réinitialisée.")

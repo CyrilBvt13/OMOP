@@ -177,20 +177,20 @@ def load_measurement():
                 None,
 
 
-            "measurement_source_value":
-                row["CODE"],
+            "measurement_source_value": 
+                truncate(row["CODE"]),
 
 
             "measurement_source_concept_id":
                 source_concept_id,
 
 
-            "unit_source_value":
-                row["UNITS"],
+            "unit_source_value": 
+                truncate(row["UNITS"]),
 
 
-            "value_source_value":
-                str(value)
+            "value_source_value": 
+                truncate(row["VALUE"]),
 
         })
 
@@ -217,3 +217,13 @@ def load_measurement():
     print(
         f"{len(measurements)} mesures importées."
     )
+
+
+
+# Certaines observations sont >50 caractères et dépasse la limite OMOP
+def truncate(value, size=50):
+
+    if pd.isna(value):
+        return None
+
+    return str(value)[:size]

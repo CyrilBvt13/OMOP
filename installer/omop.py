@@ -31,7 +31,9 @@ from modules.etl.drug import load_drug
 from modules.etl.measurement import load_measurement
 from modules.reduce_observations import reduce_observations
 
-from modules.reset import reset
+from modules.reset import reset, reset_condition
+
+from modules.test_mapping import test_mapping
 
 parser = argparse.ArgumentParser()
 
@@ -100,10 +102,10 @@ elif args.command == "init-etl":
 
 
 # Commande pour charger les séjours uniquements
-elif args.command == "load_measurement":
+elif args.command == "load_condition":
 
-    reduce_observations()
-    load_measurement()
+    #reduce_observations()
+    load_condition()
 
 
 # Commande pour valider l'init de l'ETL à partir des fichiers générés par Synthea
@@ -117,6 +119,17 @@ elif args.command == "reset":
 
     reset()
 
+
+# Commande pour vider les table et mapping condition uniquement
+elif args.command == "reset_condition":
+
+    reset_condition()
+
+
+# Commande pour tester un code de mapping
+elif args.command == "test_mapping":
+
+    test_mapping()
 
 else:
 

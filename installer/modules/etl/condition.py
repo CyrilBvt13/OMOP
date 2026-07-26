@@ -15,7 +15,8 @@ from modules.mapping import (
 )
 
 from modules.concepts import (
-    get_concept_by_code
+    get_concept_by_code,
+    get_standard_concept
 )
 
 engine = create_engine(DB_URL)
@@ -78,18 +79,14 @@ def load_condition():
 
         source_concept_id = get_concept_by_code(
             row["CODE"],
-            "ICD10CM"
+            "ICD10"
         )
 
-        # TODO :
-        # Pour un ETL OMOP conforme, il faudra convertir le concept ICD10CM
-        # vers son concept standard SNOMED ("Maps to").
-
-        standard_concept_id = source_concept_id
-
-        condition_id = next_id(
-            "condition"
+        standard_concept_id = get_standard_concept(
+            source_concept_id
         )
+
+        condition_id = next_id("condition")
 
 
         mappings.append({
@@ -106,15 +103,13 @@ def load_condition():
 
         conditions.append({
 
-            "condition_occurrence_id":
+            "condition_occurrence_id": 
                 condition_id,
 
-
-            "person_id":
+            "person_id": 
                 person_id,
 
-
-            "condition_concept_id":
+            "condition_concept_id": 
                 standard_concept_id,
 
 
@@ -150,15 +145,13 @@ def load_condition():
                 32817,
 
 
-            "condition_source_concept_id":
+            "condition_source_concept_id": 
                 source_concept_id,
 
-
-            "condition_source_value":
+            "condition_source_value": 
                 row["CODE"],
 
-
-            "visit_occurrence_id":
+            "visit_occurrence_id": 
                 visit_id
 
         })
