@@ -95,7 +95,7 @@ docker exec -it database-postgres-1 psql -U omop -d omop
 
 Seules les tables suivantes sont exploitées pour garder le projet simple :
 
-- person|
+- person
 - visit_occurrence
 - condition_occurrence
 - drug_exposure
