@@ -132,6 +132,7 @@ Une fois Synthea compilé dans installer/synthea :
 Les fichiers Synthea sont créés dans /output/csv
 
 Note : le temps de chargement de l'ETL peut être très long (plusieurs heures) en fonction du nombre de patients générés. Pour limiter la durée de chargement je n'ai créé que 100 patients.
+
 Note : la seed 1784915154815 permet de suivre la même EDA disponible dans les notebooks Jupyter de ce projet.
 
 ---
@@ -159,6 +160,7 @@ python omop.py validate_synthea
 ```
 
 Note : pour les drug si STOP est vide, on prend START comme date de fin.
+
 Note : pour 100 patients il y a 75000 observations générées --> le script modules/reduce_observations.py permet de réduire ce volume à quelques observations par patients.
 
 ---
