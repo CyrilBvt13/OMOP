@@ -1,15 +1,6 @@
 # Mini ETL Synthea → OMOP CDM
 
-> Projet pédagogique permettant de comprendre le modèle de données **OMOP Common Data Model (CDM)** et de construire un ETL simple en Python à partir des données générées par **Synthea**.
-
----
-
-# Objectifs du projet
-
-Il s'agit d'un projet d'apprentissage visant à comprendre :
-
-- le modèle de données OMOP-CDM et ses concepts;
-- le fonctionnement d'un ETL ;
+> Projet permettant de comprendre le modèle de données **OMOP Common Data Model (CDM)** et de construire un ETL simple en Python à partir des données générées par **Synthea**.
 
 ---
 
