@@ -59,7 +59,7 @@ pip install tqdm jupyter pandas sqlalchemy psycopg2-binary matplotlib
 
 ## Créer le container Docker
 
-ULe fichier docker-compose.yml est inclus dans ce dépôt. Pour créer le container :
+Le fichier docker-compose.yml est inclus dans ce dépôt. Pour créer le container :
 
 ```
 docker compose up -d
