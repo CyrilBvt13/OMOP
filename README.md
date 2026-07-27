@@ -205,17 +205,6 @@ Cette table permet de retrouver facilement les relations entre les différentes 
 
 ---
 
-# Concepts OMOP
-
-On utilise directement les concepts présents dans la table concept. Les recherches sont effectuées :
-
-- par nom (`concept_name`)
-- par code (`concept_code`)
-
-Quelques mappings simples sont réalisés, par exemple pour les types de visites.
-
----
-
 # Simplifications utilisées
 
 Afin de garder un projet simple, plusieurs simplifications ont été retenues.
@@ -234,15 +223,20 @@ L'objectif est de recréer un ETL simple pour comprendre son fonctionnement.
 
 ---
 
-## Pas de mapping vers les concepts standards
+## Concepts OMOP
 
-Pour les tables suivantes :
+On utilise directement les concepts présents dans la table concept. Les recherches sont effectuées :
+
+- par nom (`concept_name`)
+- par code (`concept_code`)
+
+Quelques mappings simples sont réalisés, par exemple pour les types de visites.
+
+Les concepts sources sont directement utilisés comme concepts OMOP pour les tables suivantes :
 
 - condition_occurrence
 - drug_exposure
 - measurement
-
-les concepts sources sont directement utilisés comme concepts OMOP lorsque cela est possible.
 
 Par exemple :
 
@@ -256,17 +250,6 @@ Dans un ETL, les concepts devraient être convertis vers leurs concepts standard
 
 - concept_relationship
 - concept_ancestor
-
----
-
-## Mapping minimal
-
-Les mappings implémentés concernent essentiellement :
-
-- genre
-- type de visite
-
-Le reste est volontairement limité.
 
 ---
 
@@ -291,17 +274,6 @@ Certaines informations présentes dans Synthea ne sont pas importées :
 Certaines colonnes OMOP sont limitées à 50 caractères.
 
 Les valeurs textuelles trop longues sont automatiquement tronquées afin de respecter le modèle.
-
----
-
-# Performances
-
-Pour accélérer le chargement :
-
-- préchargement des tables de mapping en mémoire ;
-- utilisation de dictionnaires Python ;
-- insertion par lot avec `pandas.to_sql()`;
-- barre de progression (`tqdm`) pour les traitements longs.
 
 ---
 
