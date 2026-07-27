@@ -207,8 +207,6 @@ Cette table permet de retrouver facilement les relations entre les différentes 
 
 # Simplifications utilisées
 
-Afin de garder un projet simple, plusieurs simplifications ont été retenues.
-
 ## Pas d'utilisation de l'ETL officiel OHDSI
 
 Le projet ne dépend ainsi pas :
