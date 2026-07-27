@@ -35,7 +35,7 @@ Un installateur permet de charger automatiquement :
 
 ## prérequis :
 
-- Synthea (Java 17 requis) à déposer dans installer/synthea :
+- Synthea (Java 17 requis) à déposer dans /installer :
 
 ```
 git clone https://github.com/synthetichealth/synthea.git
@@ -51,9 +51,9 @@ cd synthea
 pip install tqdm jupyter pandas sqlalchemy psycopg2-binary matplotlib
 ```
 
-- les vocabulaires Athena (https://athena.ohdsi.org/vocabulary/list) à déposer dans installer/vocabulary : ICD10, LOINC et RxNorm
+- les vocabulaires Athena (https://athena.ohdsi.org/vocabulary/list) à déposer dans /installer/vocabulary : ICD10, LOINC et RxNorm
 
-- me modèle de données OMOP-CDM (https://github.com/OHDSI/CommonDataModel) à déposer dans installer/CommonDataModel
+- me modèle de données OMOP-CDM (https://github.com/OHDSI/CommonDataModel) à déposer dans /installer/CommonDataModel
 
 ---
 
