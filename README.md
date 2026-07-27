@@ -53,7 +53,7 @@ pip install tqdm jupyter pandas sqlalchemy psycopg2-binary matplotlib
 
 - les vocabulaires Athena (https://athena.ohdsi.org/vocabulary/list) à déposer dans /installer/vocabulary : ICD10, LOINC et RxNorm
 
-- me modèle de données OMOP-CDM (https://github.com/OHDSI/CommonDataModel) à déposer dans /installer/CommonDataModel
+- le modèle de données OMOP-CDM (https://github.com/OHDSI/CommonDataModel) à déposer dans /installer/CommonDataModel
 
 ---
 
